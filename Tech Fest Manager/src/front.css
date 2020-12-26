@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+
+
+.logo{
+    width: 100px;
+    cursor: pointer;  
+}
+
+header
+{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 95%;
+    /*height: 15%;*/
+    display: flex;
+   align-items: center;
+    justify-content: space-between;
+    padding: 40px 100px;
+    z-index: 10000;
+    transition: 0.6s;
+    
+}
+
+header #toggle
+{
+    right: 0;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+header #toggle:before
+{
+    content: '';
+    position: absolute;
+    top: 7px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+header #toggle:after
+{
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+/*#particles-js
+{
+    height: 100%;
+    background:transparent;
+    background-size: cover;
+    
+
+}*/
+
+.banner.active header #toggle:before
+{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+
+}
+
+.banner.active header #toggle:after
+{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+
+}
+
+.banner
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background-image: url(../pics/bg1.jpg);
+    background-size: cover ;
+    display: flex;
+    background-position: center;
+    align-items: center;
+    transition: 0.7s;
+    z-index: 2;
+    overflow: hidden;
+    
+}
+
+.banner.active
+{
+    transform: translate(-400px);
+}
+
+#navigate
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100vh;
+    background: #3681e4;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    transition: 0.7s;
+}
+
+#navigate.banner.active
+{
+    right: 0;
+}
+
+#navigate ul
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#navigate ul li
+{
+    list-style: none;
+}
+
+#navigate ul li a
+{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    
+}
+
+.content
+{
+    
+    color: #a7bfd8;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    z-index: 2;
+
+    
+
+}
+
+.content h3
+{
+    color: #fff;
+    font-size: 2.5em;
+}
+
+.content h1
+{
+    color: #c7d5db;
+    font-size: 3.5em;
+}
+
+.content a
+{
+    position: relative;
+    display: inline-block;
+    margin-top:20px;
+    background:transparent;
+    color: #fff;
+    border: 1px solid rgb(182, 202, 202);
+    padding: 10px 25px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.content a:hover
+{
+    background: #40c3ff;
+}
+
+.side
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 100px;
+}
+
+.side li
+{
+    list-style: none;
+}
+
+.side li a
+{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    border: 1px solid rgb(165, 176, 187);
+    margin: 10px 0 0;
+}
+
+.side li a:hover
+{
+    background: #40c3ff;
+    
+    
+} 
+
+.side li a img
+{
+    max-width: 30px;
+    filter: invert(-1);
+    
+}
+
+
+
+
+@media(max-wdth: 767px)
+{
+    header
+    {
+        padding: 20px 50 px;
+    }
+    .banner
+    {
+        padding: 100px 50px 150px;
+    }
+    .banner h3, .banner a
+    {
+        font-size: 1.3em;
+    }
+    .banner h1
+    {
+        font-size: 1.8em;
+    }
+
+}
